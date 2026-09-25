@@ -15,8 +15,8 @@ public class Main {
         // Create a random number generator for the computer's choice
 
         Random random = new Random();
-        int number = random.nextInt(3);
-        System.out.println(number);
+        //int number = random.nextInt();
+        //System.out.println(number);
         Scanner scanner = new Scanner(System.in); 
         int player1Score = 0; // Variable to track player 1's score
         int player2Score = 0; // Variable to track player 2's score
