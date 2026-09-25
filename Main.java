@@ -9,13 +9,18 @@ public class Main {
         String player1;
         String player2;
         String Computer;
-        
+        //need to see what round were on, so we can keep track of the score
+        int round = 1;// Variable to track the current round
+        String playAgain="yes";// Variable to track if players want to play again
         // Create a random number generator for the computer's choice
 
         Random random = new Random();
         int number = random.nextInt(3);
         System.out.println(number);
-       Scanner scanner = new Scanner(System.in); 
+        Scanner scanner = new Scanner(System.in); 
+        int player1Score = 0; // Variable to track player 1's score
+        int player2Score = 0; // Variable to track player 2's score
+        int computerScore = 0; // Variable to track computer's score
 
        scanner.close();
     }
