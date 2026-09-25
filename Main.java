@@ -4,7 +4,14 @@ import java.util.Scanner;
 public class Main {
   
     public static void main(String[] args) {
+       //create players 
         String[] choices = {"rock", "paper", "scissors"};  // Array of choices for the game
+        String player1;
+        String player2;
+        String Computer;
+        
+        // Create a random number generator for the computer's choice
+
         Random random = new Random();
         int number = random.nextInt(3);
         System.out.println(number);
