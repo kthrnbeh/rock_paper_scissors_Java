@@ -22,16 +22,23 @@ public class Main {
         int player2Score = 0; // Variable to track player 2's score
         int computerScore = 0; // Variable to track computer's score
         // Ask player if they want to play against computer or another player
-        System.out.println("Computer or Player2)");
+        System.out.println("Computer or Player2");
         String opponent = scanner.nextLine().toLowerCase(); // Get the opponent choice from the user and convert it to lowercase
+        while (round <= 3) {
+            //Ask player for rock, paper or scissors
+            System.out.println("Rock, Paper, Scissors?");
+            player1=scanner.nextLine().toLowerCase();;
+            
+            // Ask player if they want to play against computer or another player
+            
+            if (opponent.equals("computer")){
 
-        // Ask player if they want to play against computer or another player
-        if (opponent.equals("computer")){
+            } else{ 
 
-        }
-        else{
+            }
+         }
+        
 
-        }
         scanner.close();
     }
     
