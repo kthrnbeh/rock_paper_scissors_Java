@@ -1,8 +1,10 @@
 import java.util.Random;
 import java.util.Scanner;
+/// Rock paper scissors game
 public class Main {
   
     public static void main(String[] args) {
+        String[] choices = {"rock", "paper", "scissors"};  // Array of choices for the game
         Random random = new Random();
         int number = random.nextInt(3);
         System.out.println(number);
@@ -11,7 +13,7 @@ public class Main {
        scanner.close();
     }
     
-   /// Rock paper scissors game
+   
 
 // Ask player if they want to play against computer or another player
 
