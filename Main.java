@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
        //create players 
         String[] choices = {"rock", "paper", "scissors"};  // Array of choices for the game
-        String player1;
-        String player2;
-        String Computer;
+        String player1;// Variable to store player 1's choice
+        String player2; // Variable to store player 2's choice
+        String computer;// Variable to store the computer's choice
         //need to see what round were on, so we can keep track of the score
         int round = 1;// Variable to track the current round
         String playAgain="yes";// Variable to track if players want to play again
@@ -21,13 +21,23 @@ public class Main {
         int player1Score = 0; // Variable to track player 1's score
         int player2Score = 0; // Variable to track player 2's score
         int computerScore = 0; // Variable to track computer's score
+        Scanner scanner = new Scanner(System.in);
+        // Ask player if they want to play against computer or another player
+        System.out.println("Computer or Player2)");
+        String opponent = scanner.nextLine().toLowerCase(); // Get the opponent choice from the user and convert it to lowercase
 
-       scanner.close();
+        // Ask player if they want to play against computer or another player
+        if (opponent.equals('computer')){
+
+        }
+        else{
+            
+        }
+        scanner.close();
     }
     
    
 
-// Ask player if they want to play against computer or another player
 
 // Create score for player 1 and opponent
 
