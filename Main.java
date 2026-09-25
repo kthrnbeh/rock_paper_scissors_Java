@@ -1,36 +1,47 @@
 import java.util.Random;
-//Rock paper scissors game
+import java.util.Scanner;
 public class Main {
-  //Ask player if they want a computer or another player
-  //Play 3 rounds of rock paper scissors and declare winner
-  //Get choice from player 1
-  // Then player 2 or computer
-   // If playing against computer:
+  
+    public static void main(String[] args) {
+        Random random = new Random();
+        int number = random.nextInt(3);
+        System.out.println(number);
+       Scanner scanner = new Scanner(System.in); 
+
+       scanner.close();
+    }
+    
+   /// Rock paper scissors game
+
+// Ask player if they want to play against computer or another player
+
+// Create score for player 1 and opponent
+
+// Play 3 rounds of rock paper scissors
+
+    // Get choice from player 1
+
+    // Then player 2 or computer
+
+        // If playing against computer:
             // Generate computer's random choice
 
         // If playing against another player:
             // Get choice from player 2
 
-        // Check for a tie
+    // Display what each player chose
 
-        // Check win conditions and decide who won
+    // Check for a tie
 
-        // Add 1 point to the winner's score
+    // Check win conditions and decide who won
 
-        // Show scoreboard after each round
+    // Add 1 point to the winner's score
 
-    // After 3 rounds, show final scoreboard
+    // Show scoreboard after each round
 
-    // Show who won the whole game
+// After 3 rounds, show final scoreboard
 
-    // Ask if they want to play another 3 rounds
+// Show who won the whole game
 
-
-   /
-    public static void main(String[] args) {
-        Random random = new Random();
-        int number = random.nextInt(3);
-        System.out.println(number);
-    }
-    
+// Ask if they want to play another 3 rounds
 }
