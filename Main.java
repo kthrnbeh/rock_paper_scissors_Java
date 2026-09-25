@@ -36,7 +36,9 @@ public class Main {
                 computer=choices[number];
 
             } else{ 
-
+                //player 2
+                System.out.println("Rock, Paper, Scissors?");
+                player2=scanner.nextLine().toLowerCase();
             }
          }
         
