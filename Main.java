@@ -15,7 +15,7 @@ public class Main {
         // Create a random number generator for the computer's choice
 
         Random random = new Random();
-        //int number = random.nextInt();
+        
         //System.out.println(number);
         Scanner scanner = new Scanner(System.in); 
         int player1Score = 0; // Variable to track player 1's score
@@ -27,11 +27,13 @@ public class Main {
         while (round <= 3) {
             //Ask player for rock, paper or scissors
             System.out.println("Rock, Paper, Scissors?");
-            player1=scanner.nextLine().toLowerCase();;
+            player1=scanner.nextLine().toLowerCase();
             
             // Ask player if they want to play against computer or another player
             
             if (opponent.equals("computer")){
+                int number =random.nextInt(3);// to make only random number 0-2
+                computer=choices[number];
 
             } else{ 
 
