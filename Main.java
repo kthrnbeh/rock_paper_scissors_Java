@@ -122,7 +122,7 @@ public class Main {
                 System.out.println("You tied!");
             }
             //historic wins
-            System.out.print("\nHistory of Wins");
+            System.out.println("\nHistory of Wins");
             System.out.println("Player 1 Games Won:" +player1GamesWon);
             if(opponent.equals("computer")){
                 System.out.println("Computer Games Won:" + computerGamesWon);
