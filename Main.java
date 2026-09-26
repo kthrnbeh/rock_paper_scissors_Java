@@ -28,6 +28,7 @@ public class Main {
             //Ask player for rock, paper or scissors
             System.out.println("Rock, Paper, Scissors?");
             player1=scanner.nextLine().toLowerCase();
+            System.out.println (player1);
             
             // Ask player if they want to play against computer or another player
             
@@ -35,11 +36,14 @@ public class Main {
                 int number =random.nextInt(3);// to make only random number 0-2
                 computer=choices[number];
 
+                
             } else{ 
                 //player 2
                 System.out.println("Rock, Paper, Scissors?");
                 player2=scanner.nextLine().toLowerCase();
+                System.out.println( player2);
             }
+            // Display what each player chose
          }
         
 
