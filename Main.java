@@ -32,9 +32,6 @@ public class Main {
             player1Score = 0;
             player2Score = 0;
             computerScore = 0;
-            player1GamesWon=0;
-            player2GamesWon=0;
-            computerGamesWon=0;
             // Ask player if they want to play against the computer or another player.
             System.out.println("Computer or Player2");
             String opponent = scanner.nextLine().toLowerCase();
