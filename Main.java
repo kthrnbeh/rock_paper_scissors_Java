@@ -77,16 +77,32 @@ public class Main {
 
             
             }
-            // After 3 rounds, show final scoreboard
+            // Show scoreboard after each round
           System.out.println("player1:"+ player1Score);
-          System.out.println("player2:" + player2Score);
-          System.out.println("computer"+computerScore);
+          if (opponent.equals("computer")) {
+            System.out.println("computer"+computerScore);
+              
+          }
+          else{
+             System.out.println("player2:" + player2Score);
+          }
         // move to the next round
           round++;  
            
-          //show who won the whole game
+          
         }
-        // Show scoreboard after each round
+        //show who won the whole game
+        if (player1Score > computerScore) {
+            System.out.println("Player 1 won the game!");
+        }
+        else if (player1Score < computerScore){
+            System.out.println("Computer wins.. try again.");
+        }
+        else{
+            System.out.println("Its a tie!");
+        }
+        
+        
         // Ask if they want to play another 3 rounds
         scanner.close();
     }
