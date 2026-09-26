@@ -26,7 +26,7 @@ public class Main {
         // Ask player if they want to play against computer or another player
         System.out.println("Computer or Player2");
         String opponent = scanner.nextLine().toLowerCase();
-
+    while(playAgain.equals("yes")){
         while (round <= 3) {
             // Ask player for rock, paper or scissors
             System.out.println("Rock, Paper, Scissors?");
@@ -91,6 +91,7 @@ public class Main {
            
           
         }
+    }
         //show who won the whole game
         if(opponent.equals("computer")){
             if (player1Score > computerScore) {
