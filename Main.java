@@ -16,10 +16,14 @@ public class Main {
 
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-
+        //score during the game
         int player1Score = 0;
         int player2Score = 0;
         int computerScore = 0;
+        //for over all score at the end of the game
+        int player1GamesWon = 0;
+        int player2GamesWon = 0;
+        int computerGamesWon = 0;
 
         
 
@@ -28,10 +32,13 @@ public class Main {
             player1Score = 0;
             player2Score = 0;
             computerScore = 0;
+            player1GamesWon=0;
+            player2GamesWon=0;
+            computerGamesWon=0;
             // Ask player if they want to play against the computer or another player.
-    
             System.out.println("Computer or Player2");
             String opponent = scanner.nextLine().toLowerCase();
+
 
             while (round <= 3) {
                 // Ask player for rock, paper, or scissors.
@@ -94,14 +101,17 @@ public class Main {
 
             // Show who won the whole game.
             System.out.println("Final Scoreboard");
-System.out. println("Player 1: " + player1Score);
+            System.out. println("Player 1: " + player1Score);
+            player1Score++;
             if (opponent.equals("computer")) {
                 if (player1Score > computerScore) {
                     System.out.println("Player 1 won the game!");
+                    computerScore++;
                 } else if (player1Score < computerScore) {
                     System.out.println("Computer wins... try again.");
                 } else {
                     System.out.println("It's a tie!");
+                    player2Score++
                 }
             } else if (player1Score > player2Score) {
                 System.out.println("Player 1 wins!");
