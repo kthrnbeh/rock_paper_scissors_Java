@@ -87,6 +87,7 @@ public class Main {
                 }
 
                 // Show scoreboard after each round.
+                System.out.println("\nCurrent Round Score:" );
                 System.out.println("player1: " + player1Score);
                 if (opponent.equals("computer")) {
                     System.out.println("computer: " + computerScore);
@@ -99,7 +100,7 @@ public class Main {
             }
 
             // Show who won the whole game.
-            System.out.println("Final Scoreboard");
+            System.out.println("\nFinal Scoreboard");
             System.out. println("Player 1: " + player1Score);
             if (opponent.equals("computer")) {
                 if (player1Score > computerScore) {
@@ -119,6 +120,16 @@ public class Main {
                 player2GamesWon++;
             } else {
                 System.out.println("You tied!");
+            }
+            //historic wins
+            System.out.print("\nHistory of Wins");
+            System.out.println("Player 1 Games Won:" +player1GamesWon);
+            if(opponent.equals("computer")){
+                System.out.println("Computer Games Won:" + computerGamesWon);
+
+            }
+            else{
+                System.out.println("Player 2 Games Won:" +player2GamesWon);
             }
 
             // Ask if they want to play another three rounds.
