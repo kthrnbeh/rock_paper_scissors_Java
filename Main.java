@@ -93,6 +93,8 @@ public class Main {
             }
 
             // Show who won the whole game.
+            System.out.println("Final Scoreboard");
+System.out. println("Player 1: " + player1Score);
             if (opponent.equals("computer")) {
                 if (player1Score > computerScore) {
                     System.out.println("Player 1 won the game!");
