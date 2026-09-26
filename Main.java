@@ -101,7 +101,15 @@ public class Main {
         else{
             System.out.println("Its a tie!");
         }
-        
+        if(player1Score > player2Score){
+            System.out.println("Player 1 Wins!");
+        }
+        else if (player1Score < player2Score){
+            System.out.println("Player 2 Wins!");
+        }
+        else{
+            System.out.println("You have Tied!");
+        }
         
         // Ask if they want to play another 3 rounds
         scanner.close();
