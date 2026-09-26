@@ -38,6 +38,8 @@ public class Main {
 
 
             while (round <= 3) {
+                // name the round 
+                System.out.println("Round number: "+ round);
                 // Ask player for rock, paper, or scissors.
                 System.out.println("Rock, Paper, Scissors?");
                 player1 = scanner.nextLine().toLowerCase();
@@ -99,21 +101,22 @@ public class Main {
             // Show who won the whole game.
             System.out.println("Final Scoreboard");
             System.out. println("Player 1: " + player1Score);
-            player1Score++;
             if (opponent.equals("computer")) {
                 if (player1Score > computerScore) {
                     System.out.println("Player 1 won the game!");
-                    computerScore++;
+                    player1GamesWon++;
                 } else if (player1Score < computerScore) {
                     System.out.println("Computer wins... try again.");
+                    computerGamesWon++;
                 } else {
                     System.out.println("It's a tie!");
-                    player2Score++
                 }
             } else if (player1Score > player2Score) {
                 System.out.println("Player 1 wins!");
+                player1GamesWon++;
             } else if (player1Score < player2Score) {
                 System.out.println("Player 2 wins!");
+                player2GamesWon++;
             } else {
                 System.out.println("You tied!");
             }
