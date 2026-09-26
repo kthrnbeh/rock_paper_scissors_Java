@@ -16,30 +16,31 @@ public class Main {
 
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        //score during the game
+
+        // Score during the game
         int player1Score = 0;
         int player2Score = 0;
         int computerScore = 0;
-        //for over all score at the end of the game
+
+        // Overall score at the end of the game
         int player1GamesWon = 0;
         int player2GamesWon = 0;
         int computerGamesWon = 0;
-
-        
 
         while (playAgain.equals("yes")) {
             round = 1;
             player1Score = 0;
             player2Score = 0;
             computerScore = 0;
+
             // Ask player if they want to play against the computer or another player.
             System.out.println("Computer or Player2");
             String opponent = scanner.nextLine().toLowerCase();
 
-
             while (round <= 3) {
-                // name the round 
-                System.out.println("Round number: "+ round);
+                // Name the round.
+                System.out.println("Round number: " + round);
+
                 // Ask player for rock, paper, or scissors.
                 System.out.println("Rock, Paper, Scissors?");
                 player1 = scanner.nextLine().toLowerCase();
@@ -87,7 +88,7 @@ public class Main {
                 }
 
                 // Show scoreboard after each round.
-                System.out.println("\nCurrent Round Score:" );
+                System.out.println("\nCurrent Round Score:");
                 System.out.println("player1: " + player1Score);
                 if (opponent.equals("computer")) {
                     System.out.println("computer: " + computerScore);
@@ -99,10 +100,13 @@ public class Main {
                 round++;
             }
 
-            // Show who won the whole game.
+            // Show final scoreboard.
             System.out.println("\nFinal Scoreboard");
-            System.out. println("Player 1: " + player1Score);
+            System.out.println("Player 1: " + player1Score);
+
             if (opponent.equals("computer")) {
+                System.out.println("Computer: " + computerScore);
+
                 if (player1Score > computerScore) {
                     System.out.println("Player 1 won the game!");
                     player1GamesWon++;
@@ -112,24 +116,38 @@ public class Main {
                 } else {
                     System.out.println("It's a tie!");
                 }
-            } else if (player1Score > player2Score) {
-                System.out.println("Player 1 wins!");
-                player1GamesWon++;
-            } else if (player1Score < player2Score) {
-                System.out.println("Player 2 wins!");
-                player2GamesWon++;
             } else {
-                System.out.println("You tied!");
-            }
-            //historic wins
-            System.out.println("\nHistory of Wins");
-            System.out.println("Player 1 Games Won:" +player1GamesWon);
-            if(opponent.equals("computer")){
-                System.out.println("Computer Games Won:" + computerGamesWon);
+                System.out.println("Player 2: " + player2Score);
 
+                if (player1Score > player2Score) {
+                    System.out.println("Player 1 wins!");
+                    player1GamesWon++;
+                } else if (player1Score < player2Score) {
+                    System.out.println("Player 2 wins!");
+                    player2GamesWon++;
+                } else {
+                    System.out.println("You tied!");
+                }
             }
-            else{
-                System.out.println("Player 2 Games Won:" +player2GamesWon);
+
+            // Historic wins
+            System.out.println("\nHistory of Wins");
+            System.out.println("Player 1 Games Won: " + player1GamesWon);
+
+            if (opponent.equals("computer")) {
+                System.out.println("Computer Games Won: " + computerGamesWon);
+            } else {
+                System.out.println("Player 2 Games Won: " + player2GamesWon);
+            }
+
+            System.out.println("Reset game history? yes/no");
+            String reset = scanner.nextLine().toLowerCase();
+
+            if (reset.equals("yes")) {
+                player1GamesWon = 0;
+                player2GamesWon = 0;
+                computerGamesWon = 0;
+                System.out.println("History reset!");
             }
 
             // Ask if they want to play another three rounds.
