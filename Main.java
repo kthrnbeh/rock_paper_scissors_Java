@@ -92,23 +92,27 @@ public class Main {
           
         }
         //show who won the whole game
-        if (player1Score > computerScore) {
-            System.out.println("Player 1 won the game!");
-        }
-        else if (player1Score < computerScore){
-            System.out.println("Computer wins.. try again.");
-        }
-        else{
-            System.out.println("Its a tie!");
-        }
-        if(player1Score > player2Score){
-            System.out.println("Player 1 Wins!");
-        }
-        else if (player1Score < player2Score){
-            System.out.println("Player 2 Wins!");
-        }
-        else{
-            System.out.println("You have Tied!");
+        if(opponent.equals(computer)){
+            if (player1Score > computerScore) {
+                System.out.println("Player 1 won the game!");
+            }
+            else if (player1Score < computerScore){
+                 System.out.println("Computer wins.. try again.");
+            }
+            else{
+                System.out.println("Its a tie!");
+             }
+        }   
+        else {
+            if(player1Score > player2Score){
+                 System.out.println("Player 1 Wins!");
+            }
+            else if (player1Score < player2Score){
+                System.out.println("Player 2 Wins!");
+            }
+            else{
+                System.out.println("You have Tied!");
+            }
         }
         
         // Ask if they want to play another 3 rounds
