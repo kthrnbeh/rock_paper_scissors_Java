@@ -92,7 +92,7 @@ public class Main {
           
         }
         //show who won the whole game
-        if(opponent.equals(computer)){
+        if(opponent.equals("computer")){
             if (player1Score > computerScore) {
                 System.out.println("Player 1 won the game!");
             }
