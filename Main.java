@@ -74,11 +74,20 @@ public class Main {
                     System.out.println("player 2 wins!");
                     player2Score++;
                 }
-            }
 
             
+            }
+            // After 3 rounds, show final scoreboard
+          System.out.println("player1:"+ player1Score);
+          System.out.println("player2:" + player2Score);
+          System.out.println("computer"+computerScore);
+        // move to the next round
+          round++;  
+           
+          //show who won the whole game
         }
         // Show scoreboard after each round
+        // Ask if they want to play another 3 rounds
         scanner.close();
     }
 
@@ -86,9 +95,6 @@ public class Main {
 
     
 
-    // After 3 rounds, show final scoreboard
 
-    // Show who won the whole game
-
-    // Ask if they want to play another 3 rounds
+    
 }
