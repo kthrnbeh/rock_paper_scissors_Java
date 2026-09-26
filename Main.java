@@ -21,15 +21,17 @@ public class Main {
         int player2Score = 0;
         int computerScore = 0;
 
-        // Ask player if they want to play against the computer or another player.
-        System.out.println("Computer or Player2");
-        String opponent = scanner.nextLine().toLowerCase();
+        
 
         while (playAgain.equals("yes")) {
             round = 1;
             player1Score = 0;
             player2Score = 0;
             computerScore = 0;
+            // Ask player if they want to play against the computer or another player.
+    
+            System.out.println("Computer or Player2");
+            String opponent = scanner.nextLine().toLowerCase();
 
             while (round <= 3) {
                 // Ask player for rock, paper, or scissors.
