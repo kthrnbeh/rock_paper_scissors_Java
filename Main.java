@@ -49,7 +49,7 @@ public class Main {
 
                 // Ask player for rock, paper, or scissors.
                 System.out.println("Rock, Paper, Scissors?");
-                player1 = scanner.nextLine().toLowerCase();
+                player1 = scanner.nextLine().trim().toLowerCase();
                 System.out.println("player1: " + player1);
 
                 if (opponent.equals("computer")) {
