@@ -32,12 +32,17 @@ public class Main {
             player1Score = 0;
             player2Score = 0;
             computerScore = 0;
-            //need to make a system where only the words player2 and computer are used.
-            
-            // Ask player if they want to play against the computer or another player.
-            System.out.println("Computer or Player2");
-            String opponent = scanner.nextLine().toLowerCase();
+           
 
+            // Ask player if they want to play against the computer or another player.
+            System.out.println("Choose your opponent: computer or player2");
+            String opponent = scanner.nextLine().toLowerCase();
+            //need to make a system where only the words player2 and computer are used.
+            while (!opponent.equals("computer") && !opponent.equals("player2")) {
+                 System.out.println("Invalid input. Choose computer or player2.");
+                 opponent = scanner.nextLine().toLowerCase();
+            }
+            
             while (round <= 3) {
                 // Name the round.
                 System.out.println("Round number: " + round);
