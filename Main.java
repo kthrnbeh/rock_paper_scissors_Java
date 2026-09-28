@@ -32,17 +32,17 @@ public class Main {
             player1Score = 0;
             player2Score = 0;
             computerScore = 0;
-           
 
             // Ask player if they want to play against the computer or another player.
             System.out.println("Choose your opponent: computer or player2");
             String opponent = scanner.nextLine().trim().toLowerCase();
-            //need to make a system where only the words player2 and computer are used.
+
+            // Only allow the choices computer and player2.
             while (!opponent.equals("computer") && !opponent.equals("player2")) {
-                 System.out.println("Invalid input. Choose computer or player2.");
-                 opponent = scanner.nextLine().trim().toLowerCase();
+                System.out.println("Invalid input. Choose computer or player2.");
+                opponent = scanner.nextLine().trim().toLowerCase();
             }
-            
+
             while (round <= 3) {
                 // Name the round.
                 System.out.println("Round number: " + round);
@@ -50,6 +50,14 @@ public class Main {
                 // Ask player for rock, paper, or scissors.
                 System.out.println("Rock, Paper, Scissors?");
                 player1 = scanner.nextLine().trim().toLowerCase();
+
+                while (!player1.equals("rock")
+                        && !player1.equals("paper")
+                        && !player1.equals("scissors")) {
+                    System.out.println("Invalid input. Choose rock, paper, or scissors.");
+                    player1 = scanner.nextLine().trim().toLowerCase();
+                }
+
                 System.out.println("player1: " + player1);
 
                 if (opponent.equals("computer")) {
