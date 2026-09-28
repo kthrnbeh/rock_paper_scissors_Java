@@ -85,6 +85,9 @@ public class Main {
                     // Player 2
                     System.out.println("Rock, Paper, Scissors?");
                     player2 = scanner.nextLine().toLowerCase();
+                    while(player2.equals("rock"))
+                        && !player2.equals("paper")
+                        && !player2.equals("scissors"))
                     System.out.println("player2: " + player2);
 
                     if (player1.equals(player2)) {
