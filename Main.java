@@ -173,6 +173,10 @@ public class Main {
 
             // Ask if they want to play another three rounds.
             System.out.println("Play again? yes/no");
+            while (!playAgain.equals("yes") && !playAgain.equals("no")) {
+                System.out.println("Invalid input. Enter yes or no.");
+                playAgain = scanner.nextLine().trim().toLowerCase();
+            }            
             playAgain = scanner.nextLine().toLowerCase();
         }
 
