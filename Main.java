@@ -154,15 +154,16 @@ public class Main {
             // Historic wins
             System.out.println("\nHistory of Wins");
             System.out.println("Player 1 Games Won: " + player1GamesWon);
-
-            if (opponent.equals("computer")) {
-                System.out.println("Computer Games Won: " + computerGamesWon);
-            } else {
-                System.out.println("Player 2 Games Won: " + player2GamesWon);
-            }
+            System.out.println("Player 2 Games Won: " + player2GamesWon);
+            System.out.println("Computer Games Won: " + computerGamesWon);
 
             System.out.println("Reset game history? yes/no");
-            String reset = scanner.nextLine().toLowerCase();
+            String reset = scanner.nextLine().trim().toLowerCase();
+
+            while (!reset.equals("yes") && !reset.equals("no")) {
+                System.out.println("Invalid input. Enter yes or no.");
+                reset = scanner.nextLine().trim().toLowerCase();
+            }
 
             if (reset.equals("yes")) {
                 player1GamesWon = 0;
@@ -173,11 +174,12 @@ public class Main {
 
             // Ask if they want to play another three rounds.
             System.out.println("Play again? yes/no");
+            playAgain = scanner.nextLine().trim().toLowerCase();
+
             while (!playAgain.equals("yes") && !playAgain.equals("no")) {
                 System.out.println("Invalid input. Enter yes or no.");
                 playAgain = scanner.nextLine().trim().toLowerCase();
-            }            
-            playAgain = scanner.nextLine().toLowerCase();
+            }
         }
 
         scanner.close();
