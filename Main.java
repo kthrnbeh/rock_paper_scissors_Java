@@ -181,7 +181,7 @@ public class Main {
                 playAgain = scanner.nextLine().trim().toLowerCase();
             }
         }
-
+ 
         scanner.close();
     }
 }
