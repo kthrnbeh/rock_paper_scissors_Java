@@ -36,11 +36,11 @@ public class Main {
 
             // Ask player if they want to play against the computer or another player.
             System.out.println("Choose your opponent: computer or player2");
-            String opponent = scanner.nextLine().toLowerCase();
+            String opponent = scanner.nextLine().trim().toLowerCase();
             //need to make a system where only the words player2 and computer are used.
             while (!opponent.equals("computer") && !opponent.equals("player2")) {
                  System.out.println("Invalid input. Choose computer or player2.");
-                 opponent = scanner.nextLine().toLowerCase();
+                 opponent = scanner.nextLine().trim().toLowerCase();
             }
             
             while (round <= 3) {
@@ -55,7 +55,6 @@ public class Main {
                 if (opponent.equals("computer")) {
                     int number = random.nextInt(3);
                     computer = choices[number];
-
                     System.out.println("computer: " + computer);
 
                     // Check for a tie.
