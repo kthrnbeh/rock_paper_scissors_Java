@@ -61,9 +61,6 @@ public class Main {
                     System.out.println("Invalid input. Choose rock, paper, or scissors.");
                     player1 = scanner.nextLine().trim().toLowerCase();
                 }
-
-                System.out.println("player1: " + player1);
-
                 if (player1.equals("rock")) {
                     rockCount++;
                 } else if (player1.equals("paper")) {
@@ -164,7 +161,11 @@ public class Main {
                     System.out.println("You tied!");
                 }
             }
-
+            // Show the number of times rock, paper, or scissors was played.
+            System.out.println("\nTotal Choices Made:");
+            System.out.println("Rock: " + rockCount);
+            System.out.println("Paper: " + paperCount);
+            System.out.println("Scissors: " + scissorsCount);
             // Historic wins
             System.out.println("\nHistory of Wins");
             System.out.println("Player 1 Games Won: " + player1GamesWon);
