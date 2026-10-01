@@ -26,6 +26,10 @@ public class Main {
         int player1GamesWon = 0;
         int player2GamesWon = 0;
         int computerGamesWon = 0;
+        // Count the number of times rock, paper, or scissors is played.
+        int rockCount = 0;
+        int paperCount = 0;
+        int scissorsCount = 0;
 
         while (playAgain.equals("yes")) {
             round = 1;
@@ -56,6 +60,16 @@ public class Main {
                         && !player1.equals("scissors")) {
                     System.out.println("Invalid input. Choose rock, paper, or scissors.");
                     player1 = scanner.nextLine().trim().toLowerCase();
+                }
+
+                System.out.println("player1: " + player1);
+
+                if (player1.equals("rock")) {
+                    rockCount++;
+                } else if (player1.equals("paper")) {
+                    paperCount++;
+                } else if (player1.equals("scissors")) {
+                    scissorsCount++;
                 }
 
                 System.out.println("player1: " + player1);
@@ -181,7 +195,7 @@ public class Main {
                 playAgain = scanner.nextLine().trim().toLowerCase();
             }
         }
- 
+
         scanner.close();
     }
 }
