@@ -1,8 +1,8 @@
 // Imports Random so the computer can make random choices.
 import java.util.Random;
-// Imports Scanner so the program can read keyboard input.
 import java.util.Scanner;
-
+// Imports File so the program can work with files and file paths.
+import java.io.File;
 // Defines the class that contains the rock-paper-scissors game.
 public class Main {
 
