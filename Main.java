@@ -1,14 +1,15 @@
 // Imports Random so the computer can make random choices.
+import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
-// Imports File so the program can work with files and file paths.
-import java.io.File;
 // Defines the class that contains the rock-paper-scissors game.
 public class Main {
-
+    
     // The main method is where the program begins running.
-    public static void main(String[] args) {
-        // Stores every choice that the computer can make.
+   public static void main(String[] args) throws Exception {
+        FileWriter writer = new FileWriter("game_history.txt",true);
+        
+    // Stores every choice that the computer can make.
         String[] choices = {"rock", "paper", "scissors"};
         // Stores the choices made by Player 1, Player 2, and the computer.
         String player1;
@@ -103,6 +104,7 @@ public class Main {
                         System.out.println("Player 1 wins!");
                         // Adds one point to Player 1's current-game score.
                         player1Score++;
+                        
 
                     // If it was not a tie and Player 1 did not win, the computer wins.
                     } else {
@@ -110,6 +112,7 @@ public class Main {
                         System.out.println("Computer wins!");
                         // Adds one point to the computer's current-game score.
                         opponentScore++;
+                       
                     }
                 } else {
                     // Uses this branch when Player 1 is playing against Player 2.
@@ -142,12 +145,14 @@ public class Main {
                         System.out.println("Player 1 wins!");
                         // Adds one point to Player 1's current-game score.
                         player1Score++;
+                        
                     } else {
                         // If Player 1 did not win or tie, Player 2 wins the round.
                         // Announces that Player 2 won this round.
                         System.out.println("Player 2 wins!");
                         // Adds one point to Player 2's current-game score.
                         opponentScore++;
+                       
                     }
                 }
 
@@ -183,17 +188,20 @@ public class Main {
                 System.out.println("Player 1 wins the game!");
                 // Adds one to Player 1's lifetime match-win history.
                 player1GamesWon++;
+                writer.write("Player 1 wins the game!\n");
             // If Player 1 did not win, checks whether the opponent was the computer.
             } else if (opponent.equals("computer")) {
                 // Announces that the computer won the complete match.
                 System.out.println("Computer wins the game!");
                 // Adds one to the computer's lifetime match-win history.
                 computerGamesWon++;
+                writer.write("Computer wins the game!\n");
             } else {
                 // If Player 1 and the computer did not win, Player 2 won the match.
                 System.out.println("Player 2 wins the game!");
                 // Adds one to Player 2's lifetime match-win history.
                 player2GamesWon++;
+                writer.write("Player 2 wins the game!\n");
             }
                
             
@@ -231,6 +239,7 @@ public class Main {
                 computerGamesWon = 0;
                 // Confirms that the history was erased.
                 System.out.println("History reset!");
+                
             }
 
             // Asks whether the user wants to play another best-of-three game.
@@ -249,6 +258,15 @@ public class Main {
         }
 
         // Closes the Scanner and releases the input resource when the program ends.
+        writer.close();
+        File historyFile = new File("game_history.txt");
+        Scanner historyScanner = new Scanner(historyFile);
+        System.out.println("\nGame History:");
+        while (historyScanner.hasNextLine()) {
+            String line = historyScanner.nextLine();
+            System.out.println(line);
+        }
+        historyScanner.close();     
         scanner.close();
     }
 }
