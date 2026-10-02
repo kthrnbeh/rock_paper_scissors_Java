@@ -191,6 +191,7 @@ public class Main {
                 System.out.println("Player 1 wins the game!");
                 // Adds one to Player 1's lifetime match-win history.
                 player1GamesWon++;
+                // Saves Player 1's win to the game-history file.
                 writer.write("Player 1 won the game!\n");
                 
             // If Player 1 did not win, checks whether the opponent was the computer.
@@ -199,6 +200,7 @@ public class Main {
                 System.out.println("Computer wins the game!");
                 // Adds one to the computer's lifetime match-win history.
                 computerGamesWon++;
+                // Saves the computer's win to the game-history file.
                 writer.write("Computer won the game!\n");
                
             } else {
@@ -206,6 +208,7 @@ public class Main {
                 System.out.println("Player 2 wins the game!");
                 // Adds one to Player 2's lifetime match-win history.
                 player2GamesWon++;
+                // Saves Player 2's win to the game-history file.
                 writer.write("Player 2 won the game!\n");
             }
                
