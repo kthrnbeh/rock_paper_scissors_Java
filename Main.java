@@ -34,30 +34,31 @@ public class Main {
         int player1GamesWon = 0;
         int player2GamesWon = 0;
         int computerGamesWon = 0;
-        // Counts how many times each choice is made during the session.
-        int rockCount = 0;
-        int paperCount = 0;
-        int scissorsCount = 0;
-
+        
         // Repeats the game while the user chooses to play again.
         while (playAgain.equals("yes")) {
             // Resets the round and current-game scores for a new game.
             round = 1;
-            playerScore = 0;
+            // Sets Player 1's score back to zero at the start of a new match.
+            player1Score = 0;
+            // Sets the selected opponent's score back to zero at the start of a new match.
             opponentScore = 0;
 
             // Asks whether Player 1 will play against the computer or Player 2.
+            // The user must type either "computer" or "player2".
             System.out.println("Choose your opponent: computer or player2");
             // Reads, trims, and standardizes the opponent choice.
             String opponent = scanner.nextLine().trim().toLowerCase();
 
             // Repeats until the user enters one of the two valid opponents.
             while (!opponent.equals("computer") && !opponent.equals("player2")) {
+                // Explains that the opponent choice was not accepted.
                 System.out.println("Invalid input. Choose computer or player2.");
+                // Reads the opponent choice again after the invalid-input message.
                 opponent = scanner.nextLine().trim().toLowerCase();
             }
 
-            // Plays exactly three rounds in the current game.
+            // Plays rounds until either side wins two rounds, which wins the match.
             while (player1Score <2 && opponentScore <2) {
                 // Displays the number of the round being played.
                 System.out.println("Round number: " + round);
@@ -71,16 +72,10 @@ public class Main {
                 while (!player1.equals("rock")
                         && !player1.equals("paper")
                         && !player1.equals("scissors")) {
+                    // Tells Player 1 that the entered choice is not valid.
                     System.out.println("Invalid input. Choose rock, paper, or scissors.");
+                    // Reads Player 1's choice again.
                     player1 = scanner.nextLine().trim().toLowerCase();
-                }
-                // Updates the total count for Player 1's selected choice.
-                if (player1.equals("rock")) {
-                    rockCount++;
-                } else if (player1.equals("paper")) {
-                    paperCount++;
-                } else if (player1.equals("scissors")) {
-                    scissorsCount++;
                 }
 
                 // Displays Player 1's choice.
@@ -97,18 +92,21 @@ public class Main {
 
                     // Checks whether both players made the same choice.
                     if (player1.equals(computer)) {
+                        // Announces that neither side earns a point for a tied round.
                         System.out.println("It's a Tie");
 
                     // Checks the three combinations in which Player 1 wins.
                     } else if ((player1.equals("rock") && computer.equals("scissors"))
                             || (player1.equals("scissors") && computer.equals("paper"))
                             || (player1.equals("paper") && computer.equals("rock"))) {
+                        // Announces that Player 1 won this round.
                         System.out.println("Player 1 wins!");
                         // Adds one point to Player 1's current-game score.
                         player1Score++;
 
                     // If it was not a tie and Player 1 did not win, the computer wins.
                     } else {
+                        // Announces that the computer won this round.
                         System.out.println("Computer wins!");
                         // Adds one point to the computer's current-game score.
                         opponentScore++;
@@ -123,7 +121,9 @@ public class Main {
                     while (!player2.equals("rock")
                             && !player2.equals("paper")
                             && !player2.equals("scissors")) {
+                        // Tells Player 2 that the entered choice is not valid.
                         System.out.println("Invalid input. Choose rock, paper, or scissors.");
+                        // Reads Player 2's choice again.
                         player2 = scanner.nextLine().trim().toLowerCase();
                     }
 
@@ -132,16 +132,19 @@ public class Main {
 
                     // Checks whether both players made the same choice.
                     if (player1.equals(player2)) {
+                        // Announces that neither side earns a point for a tied round.
                         System.out.println("It's a Tie");
                     // Checks the three combinations in which Player 1 wins.
                     } else if ((player1.equals("rock") && player2.equals("scissors"))
                             || (player1.equals("scissors") && player2.equals("paper"))
                             || (player1.equals("paper") && player2.equals("rock"))) {
+                        // Announces that Player 1 won this round.
                         System.out.println("Player 1 wins!");
                         // Adds one point to Player 1's current-game score.
                         player1Score++;
                     } else {
                         // If Player 1 did not win or tie, Player 2 wins the round.
+                        // Announces that Player 2 won this round.
                         System.out.println("Player 2 wins!");
                         // Adds one point to Player 2's current-game score.
                         opponentScore++;
@@ -149,68 +152,98 @@ public class Main {
                 }
 
                 // Displays the scores after the current round.
+                // Prints the heading for the scoreboard.
                 System.out.println("\nCurrent Round Score:");
+                // Prints Player 1's current number of round wins.
                 System.out.println("player1: " + player1Score);
+                // Prints the current number of round wins for the selected opponent.
                 System.out.println(opponent + ": " + opponentScore);
                 // Increases the round number so the next round can begin.
                 round++;
             }
 
-            // Displays the scores after all three rounds are complete.
+            // Displays the final score after someone wins the best-of-three match.
+            // Prints the heading for the final scoreboard.
             System.out.println("\nFinal Scoreboard");
+            // Prints Player 1's final match score.
             System.out.println("Player 1: " + player1Score);
+
+            // Chooses the correct opponent name for the final scoreboard.
             if (opponent.equals("computer")) {
+                // Prints the computer's final match score.
                 System.out.println("Computer: " + opponentScore);
             } else {
+                // Prints Player 2's final match score.
                 System.out.println("Player 2: " + opponentScore);
             }
+
+            // Checks whether Player 1 reached two round wins first.
             if(player1Score ==2) {
+                // Announces that Player 1 won the complete match.
                 System.out.println("Player 1 wins the game!");
+                // Adds one to Player 1's lifetime match-win history.
                 player1GamesWon++;
-            } else if (opponent.equals('computer')) {
+            // If Player 1 did not win, checks whether the opponent was the computer.
+            } else if (opponent.equals("computer")) {
+                // Announces that the computer won the complete match.
                 System.out.println("Computer wins the game!");
+                // Adds one to the computer's lifetime match-win history.
                 computerGamesWon++;
             } else {
+                // If Player 1 and the computer did not win, Player 2 won the match.
                 System.out.println("Player 2 wins the game!");
+                // Adds one to Player 2's lifetime match-win history.
                 player2GamesWon++;
             }
                
-            // Displays the total number of rock, paper, and scissors choices made.
-            System.out.println("\nTotal Choices Made:");
-            System.out.println("Rock: " + rockCount);
-            System.out.println("Paper: " + paperCount);
-            System.out.println("Scissors: " + scissorsCount);
+            
             // Displays the running history of complete games won by each opponent.
+            // Prints the heading for the win-history section.
             System.out.println("\nHistory of Wins");
+            // Prints Player 1's total number of match wins.
             System.out.println("Player 1 Games Won: " + player1GamesWon);
+            // Prints Player 2's total number of match wins.
             System.out.println("Player 2 Games Won: " + player2GamesWon);
+            // Prints the computer's total number of match wins.
             System.out.println("Computer Games Won: " + computerGamesWon);
 
             // Asks whether the user wants to erase the running win history.
+            // The user must answer yes or no.
             System.out.println("Reset game history? yes/no");
+            // Reads the user's reset choice.
             String reset = scanner.nextLine().trim().toLowerCase();
 
             // Repeats until the user enters yes or no.
             while (!reset.equals("yes") && !reset.equals("no")) {
+                // Explains that the reset answer was invalid.
                 System.out.println("Invalid input. Enter yes or no.");
+                // Reads the reset answer again.
                 reset = scanner.nextLine().trim().toLowerCase();
             }
 
             // Clears the complete-game win totals when the user chooses yes.
             if (reset.equals("yes")) {
+                // Erases Player 1's match-win history.
                 player1GamesWon = 0;
+                // Erases Player 2's match-win history.
                 player2GamesWon = 0;
+                // Erases the computer's match-win history.
                 computerGamesWon = 0;
+                // Confirms that the history was erased.
                 System.out.println("History reset!");
             }
 
-            // Asks whether the user wants to play another three-round game.
+            // Asks whether the user wants to play another best-of-three game.
+            // The user must answer yes or no.
             System.out.println("Play again? yes/no");
+            // Reads the user's decision about starting another match.
             playAgain = scanner.nextLine().trim().toLowerCase();
 
             // Repeats until the user enters yes or no.
             while (!playAgain.equals("yes") && !playAgain.equals("no")) {
+                // Explains that the play-again answer was invalid.
                 System.out.println("Invalid input. Enter yes or no.");
+                // Reads the play-again answer again.
                 playAgain = scanner.nextLine().trim().toLowerCase();
             }
         }
