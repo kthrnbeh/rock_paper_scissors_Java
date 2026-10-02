@@ -1,12 +1,17 @@
-// Imports Random so the computer can make random choices.
 import java.io.File;
+// Imports FileWriter so the program can save game results in a text file.
+import java.io.FileWriter;
+// Imports Random so the computer can make random choices.
 import java.util.Random;
+// Imports Scanner so the program can read keyboard input and file contents.
 import java.util.Scanner;
+
 // Defines the class that contains the rock-paper-scissors game.
 public class Main {
     
     // The main method is where the program begins running.
    public static void main(String[] args) throws Exception {
+        // Opens the game-history file in append mode so new results are added to the existing history.
         FileWriter writer = new FileWriter("game_history.txt",true);
         
     // Stores every choice that the computer can make.
@@ -257,16 +262,24 @@ public class Main {
             }
         }
 
-        // Closes the Scanner and releases the input resource when the program ends.
+        // Closes the file writer and saves/releases the game-history file resource.
         writer.close();
+        // Creates a File object that points to the saved game-history file.
         File historyFile = new File("game_history.txt");
+        // Opens the history file so each saved result can be read.
         Scanner historyScanner = new Scanner(historyFile);
+        // Displays a heading before printing the saved game results.
         System.out.println("\nGame History:");
+        // Reads and displays each saved result until the file has no more lines.
         while (historyScanner.hasNextLine()) {
+            // Stores the next saved result from the history file.
             String line = historyScanner.nextLine();
+            // Prints the saved result to the screen.
             System.out.println(line);
         }
+        // Closes the history scanner after all saved results have been read.
         historyScanner.close();     
+        // Closes the keyboard scanner when the program ends.
         scanner.close();
     }
 }
