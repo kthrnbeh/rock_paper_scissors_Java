@@ -26,8 +26,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Stores the points earned during the current game.
-        int playerScore = 0;
+        int player1Score = 0;
         int opponentScore = 0;
+       
 
         // Stores the number of complete games won by each opponent.
         int player1GamesWon = 0;
@@ -42,9 +43,8 @@ public class Main {
         while (playAgain.equals("yes")) {
             // Resets the round and current-game scores for a new game.
             round = 1;
-            player1Score = 0;
-            player2Score = 0;
-            computerScore = 0;
+            playerScore = 0;
+            opponentScore = 0;
 
             // Asks whether Player 1 will play against the computer or Player 2.
             System.out.println("Choose your opponent: computer or player2");
@@ -58,7 +58,7 @@ public class Main {
             }
 
             // Plays exactly three rounds in the current game.
-            while (round <= 3) {
+            while (player1Score <2 && opponentScore <2) {
                 // Displays the number of the round being played.
                 System.out.println("Round number: " + round);
 
@@ -111,7 +111,7 @@ public class Main {
                     } else {
                         System.out.println("Computer wins!");
                         // Adds one point to the computer's current-game score.
-                        computerScore++;
+                        opponentScore++;
                     }
                 } else {
                     // Uses this branch when Player 1 is playing against Player 2.
@@ -144,19 +144,14 @@ public class Main {
                         // If Player 1 did not win or tie, Player 2 wins the round.
                         System.out.println("Player 2 wins!");
                         // Adds one point to Player 2's current-game score.
-                        player2Score++;
+                        opponentScore++;
                     }
                 }
 
                 // Displays the scores after the current round.
                 System.out.println("\nCurrent Round Score:");
                 System.out.println("player1: " + player1Score);
-                if (opponent.equals("computer")) {
-                    System.out.println("computer: " + computerScore);
-                } else {
-                    System.out.println("player2: " + player2Score);
-                }
-
+                System.out.println(opponent + ": " + opponentScore);
                 // Increases the round number so the next round can begin.
                 round++;
             }
@@ -164,40 +159,22 @@ public class Main {
             // Displays the scores after all three rounds are complete.
             System.out.println("\nFinal Scoreboard");
             System.out.println("Player 1: " + player1Score);
-
-            // Compares Player 1's score with the computer's score when applicable.
             if (opponent.equals("computer")) {
-                System.out.println("Computer: " + computerScore);
-
-                // Records a complete-game win for Player 1 when Player 1 has more points.
-                if (player1Score > computerScore) {
-                    System.out.println("Player 1 won the game!");
-                    player1GamesWon++;
-                // Records a complete-game win for the computer when it has more points.
-                } else if (player1Score < computerScore) {
-                    System.out.println("Computer wins... try again.");
-                    computerGamesWon++;
-                // Reports a tie when both players have the same score.
-                } else {
-                    System.out.println("It's a tie!");
-                }
+                System.out.println("Computer: " + opponentScore);
             } else {
-                // Displays Player 2's final score when playing another person.
-                System.out.println("Player 2: " + player2Score);
-
-                // Records a complete-game win for Player 1 when Player 1 has more points.
-                if (player1Score > player2Score) {
-                    System.out.println("Player 1 wins!");
-                    player1GamesWon++;
-                // Records a complete-game win for Player 2 when Player 2 has more points.
-                } else if (player1Score < player2Score) {
-                    System.out.println("Player 2 wins!");
-                    player2GamesWon++;
-                // Reports a tie when both players have the same score.
-                } else {
-                    System.out.println("You tied!");
-                }
+                System.out.println("Player 2: " + opponentScore);
             }
+            if(player1Score ==2) {
+                System.out.println("Player 1 wins the game!");
+                player1GamesWon++;
+            } else if (opponent.equals('computer')) {
+                System.out.println("Computer wins the game!");
+                computerGamesWon++;
+            } else {
+                System.out.println("Player 2 wins the game!");
+                player2GamesWon++;
+            }
+               
             // Displays the total number of rock, paper, and scissors choices made.
             System.out.println("\nTotal Choices Made:");
             System.out.println("Rock: " + rockCount);
