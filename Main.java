@@ -26,9 +26,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Stores the points earned during the current game.
-        int player1Score = 0;
-        int player2Score = 0;
-        int computerScore = 0;
+        int playerScore = 0;
+        int opponentScore = 0;
 
         // Stores the number of complete games won by each opponent.
         int player1GamesWon = 0;
