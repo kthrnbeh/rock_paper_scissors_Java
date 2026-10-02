@@ -1,9 +1,6 @@
 import java.io.File;
-// Imports FileWriter so the program can save game results in a text file.
 import java.io.FileWriter;
-// Imports Random so the computer can make random choices.
 import java.util.Random;
-// Imports Scanner so the program can read keyboard input and file contents.
 import java.util.Scanner;
 
 // Defines the class that contains the rock-paper-scissors game.
@@ -142,6 +139,7 @@ public class Main {
                     if (player1.equals(player2)) {
                         // Announces that neither side earns a point for a tied round.
                         System.out.println("It's a Tie");
+                        
                     // Checks the three combinations in which Player 1 wins.
                     } else if ((player1.equals("rock") && player2.equals("scissors"))
                             || (player1.equals("scissors") && player2.equals("paper"))
@@ -193,20 +191,22 @@ public class Main {
                 System.out.println("Player 1 wins the game!");
                 // Adds one to Player 1's lifetime match-win history.
                 player1GamesWon++;
-                writer.write("Player 1 wins the game!\n");
+                writer.write("Player 1 won the game!\n");
+                
             // If Player 1 did not win, checks whether the opponent was the computer.
             } else if (opponent.equals("computer")) {
                 // Announces that the computer won the complete match.
                 System.out.println("Computer wins the game!");
                 // Adds one to the computer's lifetime match-win history.
                 computerGamesWon++;
-                writer.write("Computer wins the game!\n");
+                writer.write("Computer won the game!\n");
+               
             } else {
                 // If Player 1 and the computer did not win, Player 2 won the match.
                 System.out.println("Player 2 wins the game!");
                 // Adds one to Player 2's lifetime match-win history.
                 player2GamesWon++;
-                writer.write("Player 2 wins the game!\n");
+                writer.write("Player 2 won the game!\n");
             }
                
             
