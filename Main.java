@@ -1,6 +1,10 @@
+// Provides access to the saved game-history file.
 import java.io.File;
+// Allows the program to write game results to the history file.
 import java.io.FileWriter;
+// Generates random choices for the computer player.
 import java.util.Random;
+// Reads keyboard input and saved game-history lines.
 import java.util.Scanner;
 
 // Defines the class that contains the rock-paper-scissors game.
